@@ -1,25 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Monaco UI Clone</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div id="topbar">
-    <button>Run</button>
-    <button>Clear</button>
-    <button>Open</button>
-    <button>Save</button>
-  </div>
-  <div id="sidebar">
-    <div><strong>Files</strong></div>
-    <div class="file">Untitled-1.lua</div>
-    <div class="file">Untitled-2.lua</div>
-  </div>
-  <div id="editorContainer"></div>
+body {
+  margin: 0;
+  background-color: #1e1e1e;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.44.0/min/vs/loader.min.js"></script>
-  <script src="script.js"></script>
-</body>
-</html>
+#tab-bar {
+  background-color: #2d2d2d;
+  display: flex;
+  height: 32px;
+  border-bottom: 1px solid #3c3c3c;
+}
+
+.tab {
+  padding: 6px 12px;
+  color: #ccc;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-right: 1px solid #444;
+}
+
+.tab.active {
+  background-color: #1e1e1e;
+  color: white;
+  border-bottom: 2px solid #007acc;
+}
+
+.add-tab {
+  margin-left: auto;
+  color: #999;
+}
+
+#toolbar {
+  background-color: #252526;
+  display: flex;
+  gap: 10px;
+  padding: 5px 10px;
+  border-bottom: 1px solid #333;
+}
+
+#toolbar button {
+  background-color: #3c3c3c;
+  border: none;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#toolbar button:hover {
+  background-color: #505050;
+}
+
+#attach {
+  margin-left: auto;
+  background-color: #403f3f;
+  color: #f5d382;
+}
+
+#sidebar {
+  position: absolute;
+  top: 73px;
+  left: 0;
+  width: 200px;
+  bottom: 0;
+  background-color: #1e1e1e;
+  padding: 10px;
+  border-right: 1px solid #333;
+}
+
+#sidebar input {
+  width: 100%;
+  background-color: #2d2d2d;
+  border: none;
+  color: white;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.file {
+  background-color: #2d2d2d;
+  padding: 6px;
+  border-radius: 3px;
+  margin-bottom: 4px;
+}
+
+#editorContainer {
+  position: absolute;
+  left: 200px;
+  top: 73px;
+  right: 0;
+  bottom: 30px;
+}
+
+#settings {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  font-size: 14px;
+  color: #aaa;
+  cursor: pointer;
+}
